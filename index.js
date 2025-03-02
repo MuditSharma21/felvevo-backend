@@ -126,6 +126,8 @@ io.on('connection', (socket) => {
     })
 })
 
-server.listen(5000, () => {
-    console.log('✅ Listening to port 5000');
-})
+const port = process.env.PORT || 5000; // If the PORT environment variable is set, use that, otherwise default to 5000.
+
+server.listen(port, () => {
+    console.log(`✅ Listening on port ${port}`);
+});
